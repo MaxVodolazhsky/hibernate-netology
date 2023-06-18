@@ -1,0 +1,1 @@
+insert into netology.test (test, test2) values('test1', 'test2');
