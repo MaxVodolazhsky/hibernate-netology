@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class City {
 
@@ -17,6 +18,7 @@ public class City {
     @Column(nullable = false)
     private String name;
 
-    public City() {
+    public City(long id) {
+        this.id = id;
     }
 }

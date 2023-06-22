@@ -1,9 +1,6 @@
 package ru.netology.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ru.netology.entity.enums.Gender;
 
 import javax.persistence.*;
@@ -16,7 +13,7 @@ import javax.persistence.*;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
 
     @Column(nullable = false, length = 212)
@@ -34,4 +31,16 @@ public class Person {
 
     @ManyToOne(optional = false)
     private City city;
+
+    @Override
+    public String toString() {
+        return "Person{" +
+               "id=" + id +
+               ", name='" + name + '\'' +
+               ", age=" + age +
+               ", gender=" + gender +
+               ", contact=" + contact +
+               ", city=" + city +
+               '}';
+    }
 }
